@@ -1,0 +1,69 @@
+:root {
+    --bg:#fffffe;
+    --buttonBg: #ffd803;
+    --buttonText: #272343;
+    --paragraph: #2d334a;
+    --primary: #fffffe;
+    --secondary: #e3f6f5;
+    --tertiary: #bae8e8;
+}
+.loginRegisterContent{
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginRegisterForm{
+    min-width: 370px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: var(--paragraph);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 15px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+.loginRegisterForm > h3{
+    color: var(--buttonBg);
+    text-align: center;
+    margin-bottom: 10px;
+}
+.loginRegisterForm >.input{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--secondary);
+}
+.input >input{
+    display: block;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+}
+.input.success input {
+    border-color: #09c372;
+}
+.loginRegisterForm > button{
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    background-color: var(--buttonBg);
+    color: var(--buttonText);
+    font-weight: 600;
+    min-height: 50px;
+}
+@media screen and (min-width: 450px){
+    .loginRegisterForm{
+        min-width: 400px;
+        padding: 30px 15px;
+    }
+}
+@media screen and (min-width: 960px){
+    .loginRegisterForm{
+        min-width: 500px;
+        padding: 40px 20px;
+    }
+}
