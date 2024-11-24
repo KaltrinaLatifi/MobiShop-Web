@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/all.min.css" />
+    <link rel="stylesheet" href="./styles/loginRegister.css" />
+    <link rel="stylesheet" href="./styles/general.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+  </head>
+  <body>
+    <div id="login">
+      <header id="header">
+        <div class="headerPhoneContent container">
+          <div class="part1">
+            <a href="./index.html" class="headerIcon"
+              >MobiShop<span></span></a
+            >
+            <i id="hamburgerMenuIcon" class="fa-solid fa-bars"></i>
+          </div>
+          <div id="dropdownLinks" class="dropdownLinks">
+            <a href="./products.html">Products</a>
+            <a href="./login.html">Login</a>
+            <a href="./register.html">Register</a>
+          </div>
+        </div>
+        <div class="headerDestopContent container">
+          <a href="./index.html" class="headerIcon">MobiShop<span></span></a>
+          <div class="headerLinks">
+            <a href="./products.html">Products</a>
+            <a href="./login.html" class="login">Login</a>
+            <a href="./register.html" class="register">Register</a>
+          </div>
+        </div>
+      </header>
+      <div class="loginRegisterContent">
+        <form class="loginRegisterForm" id="loginForm">
+          <h3>Login</h3>
+          <div class="input">
+            <label for="loginEmail">Email</label>
+            <input name="loginEmail" id="loginEmail" />
+            <div class="error"></div>
+          </div>
+          <div class="input">
+            <label for="loginPassword">Password</label>
+            <input type="password" name="loginPassword" id="loginPassword" />
+            <div class="error"></div>
+          </div>
+          <button type="submit">Done</button>
+        </form>
+      </div>
+      <footer>
+        <div class="footerContent container">
+          <div class="footerInfos">
+            <div class="footerInfo">
+              <h6>Brands</h6>
+              <p>Apple</p>
+              <p>Samsung</p>
+            </div>
+            <div class="footerInfo">
+              <h6>Contact</h6>
+              <div class="info">
+                <i class="fa-solid fa-phone"></i>
+                <span>+38344834279</span>
+              </div>
+              <div class="info">
+                <i class="fa-solid fa-envelope"></i>
+                <span>mobishop@hotmail.com</span>
+              </div>
+              <div class="info">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Prishtine, Kosove</span>
+              </div>
+            </div>
+            <div class="footerInfo">
+              <h6>Location</h6>
+              <p>Prishtine</p>
+              <p>Prizren</p>
+              <p>Peje</p>
+            </div>
+            <div class="footerInfo footerIcons">
+              <h6>Follow Us</h6>
+              <i class="fa-brands fa-2x fa-facebook"></i>
+              <i class="fa-brands fa-2x fa-instagram"></i>
+              <i class="fa-brands fa-2x fa-twitter"></i>
+            </div>
+          </div>
+          <div class="copyRight">
+            <i class="fa-regular fa-copyright"></i>
+            <span>Copyright-All rights reserved</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/loginValidations.js"></script>
+  </body>
+</html>
