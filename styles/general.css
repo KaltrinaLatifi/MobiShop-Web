@@ -146,7 +146,7 @@ footer{
     .login{
         border-radius: 5px;
         background-color: var(--tertiary);
-        font-weight: normal;
+        font-weight: var(--secondary);
     }
     .login:hover, .register:hover{
         background-color: var(--paragraph);
@@ -155,7 +155,7 @@ footer{
     .register{
         border-radius: 5px;
         background-color: var(--tertiary);
-        font-weight: normal;
+        font-weight: var(--secondary);
     }
     .footerInfo{
         flex:none;
