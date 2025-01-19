@@ -4,7 +4,7 @@ class LoginRegister
 private $servername = "localhost";
 private $username = "root";
 private $password = "";
-private $database = "mobishop";
+private $database = "phoneshop";
 public $con;
 public $errors = [];
 
