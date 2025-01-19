@@ -9,12 +9,11 @@
 }
 .productsContent{
     padding: 20px 0;
-    background-color: rgb(188, 187, 187);
-    background-position: start;
+    background-image:linear-gradient(to bottom left, rgba(255,255,255,255), #dedded);
     background-size: cover;
     background-repeat: no-repeat;
 }
-.productsContent >h2{
+.productsContent h2{
     color: var(--buttonText);
     text-align: start;
     font-weight: 600;
@@ -25,15 +24,17 @@
 .productsCards{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 30px;
+    gap: 70px;
+    padding: 60px 0 100px 0;
 }
-.productsCards >a{
+.productsCards a{
     color: black;
 }
-.productsContent >a:hover{
+.productsContent a:hover{
     color: black;
 }
 .productCard{
+    background-color: white;
     max-height: 300px;
     grid-column: span 12;
     position: relative;
@@ -43,11 +44,14 @@
 .cardImg{
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 .cardImg >img{
     width: 100%;
     height: 100%;
     border-radius: 15px;
+    
 }
 .cardContent{
     position: absolute;
@@ -62,20 +66,20 @@
     align-items: center;
     justify-content: space-between;
 }
-.cardContent > .part1 :first-child{
+.cardContent .part1 :first-child{
     font-weight: 600;
     font-size: 18px;
 }
-.cardContent > .part1 :last-child{
+.cardContent .part1 :last-child{
     font-size: 16px;
 }
-.cardContent > .part2 >.fa-solid{
+.cardContent .part2 .fa-solid{
     color: rgb(255, 170, 0);
 }
-.cardContent > .part2 >span{
+.cardContent .part2 span{
     color: rgba(0, 0, 0, 0.5)
 }
-.productsContent > .productsFilter{
+.productsContent .productsFilter{
     margin-bottom: 15px;
 }
 .productsFilter{
@@ -84,7 +88,7 @@
     justify-content: space-between;
     gap: 10px;
 }
-.productsFilter > .input1{
+.productsFilter .input1{
     padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid var(--paragraph);
@@ -93,15 +97,15 @@
     gap: 5px;
     flex-wrap: nowrap;
 }
-.productsFilter > .input1 > input{
+.productsFilter .input1 input{
     border: none;
     background-color: transparent;
     width: 100px;
 }
-.productsFilter > .input1 > input:focus{
+.productsFilter .input1 input:focus{
     outline: none;
 }
-.productsFilter > .input2 >select{
+.productsFilter .input2 select{
     padding: 5px 10px;
     border-radius: 5px;
     border-color: var(--paragraph);
@@ -111,7 +115,7 @@
     .productCard{
         grid-column: 2/12; 
     } 
-    .productsFilter > .input1 > input{
+    .productsFilter .input1 input{
         width: 120px;
     }
 }
@@ -119,16 +123,16 @@
     .productsContent{
         padding: 20px 0 40px 0;
     }
-    .productsContent >h2{
+    .productsContent h2{
         font-size: 20px;
     }
     .productCard{
         grid-column: span 6; 
     }
-    .productsContent > .productsFilter{
+    .productsContent .productsFilter{
         margin-bottom: 20px;
     }
-    .productsFilter > .input1 > input{
+    .productsFilter .input1 input{
         width: 150px;
     }
 }
@@ -136,17 +140,17 @@
     .productsContent{
         padding: 20px 0 60px 0;
     }
-    .productsContent >h2{
+    .productsContent h2{
         font-size: 22px;
         margin-bottom: 30px;
     }
     .productCard{
         grid-column: span 4; 
     } 
-    .productsContent > .productsFilter{
+    .productsContent .productsFilter{
         margin-bottom: 25px;
     }
-    .productsFilter > .input1 > input{
+    .productsFilter .input1 input{
         width: 160px;
     }
 }

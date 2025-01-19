@@ -2,8 +2,7 @@ const loginForm = document.getElementById('loginForm');
 const loginEmail = document.getElementById('loginEmail');
 const loginPassword = document.getElementById('loginPassword');
 
-loginForm.addEventListener('submit', e => {
-    e.preventDefault();
+loginForm.addEventListener('submit', () => {
     validateInputs();
 });
 

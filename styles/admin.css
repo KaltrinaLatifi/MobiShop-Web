@@ -1,0 +1,66 @@
+.adminDashboard{
+    min-height: 100vh;
+    padding: 90px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.adminDashboard  h5{
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+.adminLinks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.adminLink{
+    padding: 15px 100px;
+    border: 1px solid rgba(0, 0, 0, 0.295);
+    border-radius: 5px;
+    background-color: #66A5AD
+}
+.adminLink:hover{
+    background-color:#4c7d84
+}
+table{
+    border: 1px solid rgba(0, 0, 0, 0.336);
+    border-radius: 10px;
+    padding: 10px;
+}
+th{
+    text-decoration: underline;
+    padding-bottom: 5px;
+}
+td{
+    text-align: center;
+}
+form{
+    max-width: 380px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+form .input{
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+.adminDashboard form input{
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+.addProductFormButton button{
+    border: none;
+    background-color: transparent;
+    padding: 10px auto;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(36, 36, 9, 0.199);
+}

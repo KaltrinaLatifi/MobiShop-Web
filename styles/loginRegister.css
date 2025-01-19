@@ -51,7 +51,7 @@
     border-radius: 10px;
     width: 100%;
     background-color: var(--buttonBg);
-    color: var(--buttonText);
+    color: black;
     font-weight: 600;
     min-height: 50px;
 }

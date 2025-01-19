@@ -1,7 +1,7 @@
 :root {
     --bg:#fffffe;
     --buttonBg: #66A5AD;
-    --buttonText: #1E2761;
+    --buttonText: #66A5AD;
     --paragraph: #1E2761;
     --primary: #fffffe;
     --secondary: #e3f6f5;
@@ -19,7 +19,7 @@
     min-height: 100vh;
 }
 header{
-    background-color: var(--buttonBg);
+    background-color: #66A5AD;
     color: var(--buttonText);
 }
 .headerDestopContent{
@@ -68,8 +68,8 @@ header{
 }
 
 footer{
-    background-color: var(--buttonText);
-    color: var(--tertiary);
+    background-color: #1E2761;
+    color: #66A5AD;
 }
 .footerContent{
     margin: 0 auto;
@@ -92,7 +92,7 @@ footer{
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 5px;
-    color: var(--buttonBg);
+    color: #66A5AD;
 }
 .info > i{
     width: 16px;
