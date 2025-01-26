@@ -2,61 +2,78 @@
 session_start(); 
 include "classProduct.php"; 
 
-// Krijo lidhjen me bazën e të dhënave
+
 $db = new mysqli('localhost', 'root', '', 'mobileshop');
 
-// Kontrollo lidhjen
+
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
 
-// Kontrollo nëse përdoruesi është autentifikuar dhe ka rolin "user"
+
 if (!isset($_SESSION['user']) || $_SESSION['user'] != "user") { 
     header("Location: login.php"); 
     exit(); 
 }
 
 $successMessage = "";
+$errors = [];  
 
-// Kontrollo nëse metoda e kërkesës është POST
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Merr dhe pastro të dhënat e inputit
+    
     $name = htmlspecialchars(trim($_POST['name']));
     $surname = htmlspecialchars(trim($_POST['surname']));
     $card_number = htmlspecialchars(trim($_POST['creditCard']));
     $address = htmlspecialchars(trim($_POST['address']));
 
-    // Kontrollo nëse ndonjë fushë është bosh
+    
     if (empty($name) || empty($surname) || empty($card_number) || empty($address)) {
-        die("All fields are required.");
+        $errors[] = "All fields are required.";
     }
 
-    // Përgatit query-n
-    $query = "INSERT INTO orders (user_id, product_id, name, surname, card_number, address) VALUES (?, ?, ?, ?, ?, ?)";
-    $stmt = $db->prepare($query);
-    if (!$stmt) {
-        die("Prepare failed: " . $db->error);
+    
+    if (!preg_match("/^[a-zA-Z]+$/", $name)) {
+        $errors[] = "First Name should contain only letters.";
     }
 
-    // Vendos vlera testuese (ndrysho sipas rastit)
-    $user_id = 1; // ID e përdoruesit (p.sh., nga sesioni)
-    $product_id = 1; // ID e produktit (p.sh., nga inputi)
-
-    // Lidhi parametrat
-    $stmt->bind_param("iissss", $user_id, $product_id, $name, $surname, $card_number, $address);
-
-    // Ekzekuto query-n
-    if ($stmt->execute()) {
-        $successMessage = "Successfully purchased!";
-    } else {
-        die("Execute failed: " . $stmt->error); // Debugging për gabime gjatë ekzekutimit
+    if (!preg_match("/^[a-zA-Z]+$/", $surname)) {
+        $errors[] = "Last Name should contain only letters.";
     }
 
-    // Mbyll deklaratën
-    $stmt->close();
+    
+    if (strlen($card_number) != 16 || !ctype_digit($card_number)) {
+        $errors[] = "Credit Card number should be 16 digits.";
+    }
+
+    
+    if (empty($errors)) {
+        $query = "INSERT INTO orders (user_id, product_id, name, surname, card_number, address) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $db->prepare($query);
+        if (!$stmt) {
+            $errors[] = "Prepare failed: " . $db->error;
+        } else {
+           
+            $user_id = 1; 
+            $product_id = 1; 
+
+          
+            $stmt->bind_param("iissss", $user_id, $product_id, $name, $surname, $card_number, $address);
+
+            
+            if ($stmt->execute()) {
+                $successMessage = "Successfully purchased!";
+            } else {
+                $errors[] = "Execute failed: " . $stmt->error; 
+            }
+
+            
+            $stmt->close();
+        }
+    }
 }
 
-// Mbyll lidhjen
+
 $db->close();
 ?>
 
@@ -98,6 +115,16 @@ $db->close();
                     <label for="address">Address</label>
                     <input type="text" id="address" name="address" required />
                 </div>
+
+                
+                <?php if (!empty($errors)): ?>
+                    <div class="error-messages">
+                        <?php foreach ($errors as $error): ?>
+                            <div class="error"><?php echo $error; ?></div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+
                 <button type="submit">Confirm Purchase</button>
             </form>
         <?php endif; ?>

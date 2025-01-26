@@ -6,6 +6,7 @@
   --primary: #fffffe;
   --secondary: #e3f6f5;
   --tertiary: #66a5ad;
+  --error: #ff4d4d; 
 }
 
 body {
@@ -66,13 +67,21 @@ form .form-group input {
   border-radius: 10px;
   outline: none;
   width: 100%;
-  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  box-sizing: border-box; 
 }
 
 form .form-group input:focus {
   border-color: var(--buttonBg);
   box-shadow: 0 0 5px var(--buttonBg);
 }
+
+
+.error {
+  color: var(--error);
+  font-size: 14px;
+  margin-top: 5px;
+}
+
 
 button {
   background-color: var(--tertiary);
@@ -84,10 +93,11 @@ button {
   cursor: pointer;
   width: 100%;
   box-sizing: border-box;
+  margin-top: 20px;
 }
 
 button:hover {
-  background-color: var(--secondary);
+  background-color: var(--tertiary);
 }
 
 .success-message {
