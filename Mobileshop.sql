@@ -35,3 +35,13 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`name`, `lastname`, `email`, `password`, `role`, `created_date`) VALUES
 ('tinaAdmin', 'Latifi', 'admin@1.com', '$2y$10$L2GvGSgXHtB3My4Pb7SaVer8Uxk2jOchJEsYc9kGiHUW8a.t4tthy', 'admin', '2025-01-11 12:34:43'),
 ('User1', 'Latifi', 'user@.com', '$2y$10$L2GvGSgXHtB3My4Pb7SaVer8Uxk2jOchJEsYc9kGiHUW8a.t4tthy', 'user', '2025-01-13 11:40:45');
+
+CREATE TABLE orders ( 
+id INT AUTO_INCREMENT PRIMARY KEY,
+product_id INT NOT NULL, 
+user_id INT NOT NULL,
+name VARCHAR(100) NOT NULL, 
+surname VARCHAR(100) NOT NULL, 
+card_number VARCHAR(16) NOT NULL, 
+address TEXT NOT NULL, 
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP );

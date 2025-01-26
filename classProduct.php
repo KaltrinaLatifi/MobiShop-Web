@@ -5,7 +5,7 @@ class Products
     private $servername = "localhost";
     private $username = "root";
     private $password = "";
-    private $database = "PhoneShop";
+    private $database = "MobileShop";
     public $con;
     public $errors = [];
 

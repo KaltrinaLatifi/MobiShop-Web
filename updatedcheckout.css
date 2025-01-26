@@ -1,0 +1,104 @@
+:root {
+  --bg: #fffffe;
+  --buttonBg: #ffd803;
+  --buttonText: #272343;
+  --paragraph: #1e2761;
+  --primary: #fffffe;
+  --secondary: #e3f6f5;
+  --tertiary: #66a5ad;
+}
+
+body {
+  background-color: var(--secondary);
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--paragraph);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.checkout {
+  background-color: var(--paragraph);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.checkout h2 {
+  text-align: center;
+  color: var(--tertiary);
+  margin-bottom: 20px;
+}
+
+.product-info {
+  margin-bottom: 20px;
+}
+
+.product-info h3 {
+  margin: 0;
+  color: var(--bg);
+}
+
+.product-info p {
+  margin: 5px 0;
+  color: var(--bg);
+}
+
+form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+form .form-group label {
+  margin-bottom: 5px;
+  color: var(--bg);
+}
+
+form .form-group input {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+form .form-group input:focus {
+  border-color: var(--buttonBg);
+  box-shadow: 0 0 5px var(--buttonBg);
+}
+
+button {
+  background-color: var(--tertiary);
+  color: var(--buttonText);
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: var(--secondary);
+}
+
+.success-message {
+  text-align: center;
+  color: #09c372;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+@media screen and (min-width: 450px) {
+  .checkout {
+    padding: 30px;
+  }
+}
